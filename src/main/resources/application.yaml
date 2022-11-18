@@ -1,0 +1,24 @@
+device:
+  monitor:
+    model: 1 # "DELL P2317H"
+    cmd-set: "ddcutil setvcp x60 -d %s %s"
+    cmd-get: "ddcutil getvcp x60 -d %s"
+    channels:
+      - { name: DP-1, code: x0f }
+      - { name: VGA,  code: x00 }
+      - { name: HDMI-1, code: x11 }
+  keyboard:
+    model: "MX Keys"
+    cmd-set: "solaar config %s change-host %d"
+    cmd-get: "solaar config %s change-host"
+  mouse:
+    model: "MX Master 3"
+    cmd-set: "solaar config %s change-host %d"
+    cmd-get: "solaar config %s change-host"
+
+retry:
+  max-attempts: 3
+  interval: 1000
+  backoff-base: 1.0
+  max-jitter-millis: 200
+  max-backoff: "PT3S"

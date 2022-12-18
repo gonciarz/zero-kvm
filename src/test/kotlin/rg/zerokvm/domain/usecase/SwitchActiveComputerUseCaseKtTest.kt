@@ -66,7 +66,7 @@ class SwitchActiveComputerUseCaseKtTest : FreeSpec({
         result.shouldBeRight(Unit)
     }
 
-    "negative scenario" - {
+    "negative scenario".config(enabled = false) - {
 
         "should return device assignment error when assigning device fails" {
 

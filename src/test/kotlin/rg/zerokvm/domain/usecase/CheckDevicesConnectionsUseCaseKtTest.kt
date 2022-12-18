@@ -5,6 +5,7 @@ import arrow.core.partially1
 import arrow.core.right
 import io.kotest.assertions.arrow.core.shouldBeLeft
 import io.kotest.assertions.arrow.core.shouldBeRight
+import io.kotest.core.annotation.Ignored
 import io.kotest.core.spec.style.FreeSpec
 import io.mockk.clearAllMocks
 import io.mockk.coEvery
@@ -19,6 +20,7 @@ import rg.zerokvm.domain.port.spi.CheckMonitorConnection
 import rg.zerokvm.domain.port.spi.CheckMouseConnection
 import rg.zerokvm.domain.port.spi.KeyboardError
 
+@Ignored
 class CheckDevicesConnectionsUseCaseKtTest : FreeSpec({
 
     val checkMonitorConnection: CheckMonitorConnection = mockk()

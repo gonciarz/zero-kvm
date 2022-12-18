@@ -1,12 +1,11 @@
 package rg.zerokvm.adapter.api.rest
 
-import org.jetbrains.annotations.NotNull
 import rg.zerokvm.adapter.api.SwitchActiveComputerDto
+import rg.zerokvm.adapter.api.rest.util.UrlPath
 import rg.zerokvm.config.BeanName
 import rg.zerokvm.domain.port.api.BroadcastSwitchActiveComputer
 import javax.inject.Named
 import javax.ws.rs.Consumes
-import javax.ws.rs.FormParam
 import javax.ws.rs.POST
 import javax.ws.rs.Path
 import javax.ws.rs.Produces
@@ -21,7 +20,7 @@ class BroadcastSwitchActiveComputerRestApiAdapter(
     private val broadcastSwitchActiveComputer: BroadcastSwitchActiveComputer,
 ) {
 
-    @Path("/assigment")
+    @Path(UrlPath.ASSIGNMENT)
     @POST
     suspend fun switchActiveComputer(switchActiveComputer: SwitchActiveComputerDto): Response =
         broadcastSwitchActiveComputer(switchActiveComputer.computer).fold(

@@ -1,5 +1,6 @@
 package rg.zerokvm.adapter.api.rest
 
+import rg.zerokvm.adapter.api.rest.util.UrlPath
 import rg.zerokvm.adapter.api.toDto
 import rg.zerokvm.config.BeanName
 import rg.zerokvm.domain.port.api.CheckDevicesConnections
@@ -19,7 +20,7 @@ class CheckDevicesConnectionsRestApiAdapter(
     private val checkDevicesConnections: CheckDevicesConnections,
 ) {
 
-    @Path("/local")
+    @Path(UrlPath.LOCAL)
     @GET
     suspend fun localDevices(): Response =
         checkDevicesConnections().fold(

@@ -17,7 +17,7 @@ internal class BroadcastSwitchActiveComputerRestApiAdapterTest {
             .contentType(ContentType.JSON)
             .accept(ContentType.JSON)
             .body(SwitchActiveComputerDto(Computer.COMPUTER_1))
-            .When().post("/api/assigment")
+            .When().post("/api/assignment")
             .then()
             .statusCode(202)
     }

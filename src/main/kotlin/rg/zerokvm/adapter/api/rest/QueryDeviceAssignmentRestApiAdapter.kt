@@ -1,5 +1,6 @@
 package rg.zerokvm.adapter.api.rest
 
+import rg.zerokvm.adapter.api.rest.util.UrlPath
 import rg.zerokvm.adapter.api.toDto
 import rg.zerokvm.config.BeanName
 import rg.zerokvm.domain.port.api.QueryDeviceAssignmentCache
@@ -19,16 +20,12 @@ class QueryDeviceAssignmentRestApiAdapter(
     private val port: QueryDeviceAssignmentCache,
 ) {
 
-    @Path(PATH_QUERY_DEVICE_ASSIGNMENT_CACHE)
+    @Path(UrlPath.ASSIGNMENT)
     @GET
     suspend fun queryDeviceAssignmentCache(): Response =
         port().fold(
             { Response.serverError().entity(it) },
             { Response.ok(it.toDto()) },
         ).build()
-
-    companion object {
-        const val PATH_QUERY_DEVICE_ASSIGNMENT_CACHE = "/assigment"
-    }
 
 }

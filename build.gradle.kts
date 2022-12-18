@@ -23,7 +23,7 @@ val kotestVersion = "5.5.4"
 
 dependencies {
     implementation("io.quarkus:quarkus-config-yaml")
-    implementation("io.quarkus:quarkus-grpc")
+//    implementation("io.quarkus:quarkus-grpc")
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
     implementation("io.quarkus:quarkus-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
